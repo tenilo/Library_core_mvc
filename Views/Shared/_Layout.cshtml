@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Le site E-commerce Library</title>
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+    <link href="~/Contents/Site.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <!--on ajoute 2 liens de navigation grace aux TagHelpers-->
+                        <a class="nav-item nav-link active" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-item nav-link active" asp-controller="Book" asp-action="List">Books</a>
+                        <!--Appel de default dans le components-->
+                        @await Component.InvokeAsync("ShoppingCartSummary")
+                        <a class="nav-item nav-link active" asp-controller="Contact" asp-action="Index">Contact</a>
+                        <!--Appel du fichier partial-->
+                        <partial name="_LoginPartial"/>
+
+                    </div>
+                </div>
+            
+        </nav>
+        <div class="row">
+            @RenderBody()
+        </div>
+        @RenderSection("Scripts", required: false)
+    </div>
+    
+</body>
+</html>

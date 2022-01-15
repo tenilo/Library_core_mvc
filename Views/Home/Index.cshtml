@@ -1,0 +1,20 @@
+﻿@model Projet.ASP.NET.Core.MVC.ViewModels.BookListViewModel
+<!-- la vue de la page par défaut-->
+<!--ajout d'une image'-->
+<div class="row text-center">
+    <img style="margin-left : 3%" src="https://www.loc.gov/static/home/images/featured/evergreen/main_reading_room.jpg" alt="" width="700" height="300">
+
+</div>
+
+
+@foreach (var book in Model.Books)
+{
+    <!--Appel du partial view-->
+    <partial name="_CardBook" model="@book" />
+
+}
+
+
+
+
+

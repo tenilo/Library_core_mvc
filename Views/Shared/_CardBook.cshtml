@@ -1,0 +1,25 @@
+﻿@model Book
+<!--Ici nous generons une view commune appélée Partial view. Cette vue est utilisée lorsqu'on a des vues qui sont identiques
+    dans des fichiers différents comme c'est le cas dans ce projet pour List et Index-->
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <h2>
+            <a asp-controller="Book" asp-action="Detail" asp-route-idBook="@Model.BooKId">@Model.Name</a>
+        </h2>
+        <img src="@Model.ImageurUrl" alt="" width="150" height="400">
+        <div class="caption">
+            <p>@Model.ShortDescription</p>
+            <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+        </div>
+        <div class="addToCart">
+            <p class="button">
+                <a class="btn btn-primary"  asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-idBook="@Model.BooKId">Add to Cart</a>
+
+            </p>
+            
+        </div>
+
+    </div>
+
+</div>

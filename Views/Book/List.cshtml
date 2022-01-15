@@ -1,0 +1,12 @@
+﻿@model Projet.ASP.NET.Core.MVC.ViewModels.BookListViewModel
+    
+
+
+    @foreach (var book in Model.Books)
+    {
+        <!--Appel du partial view-->
+       <partial name="_CardBook" model="@book"/> 
+
+    }
+
+
